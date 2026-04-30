@@ -274,6 +274,45 @@ const server = http.createServer((req, res) => {
   }
 
   // TAREA 2: Añade aquí la ruta /aerogeneradores
+  if (req.url === '/aerogeneradores') {
+  res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+  res.end(`<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Aerogeneradores - ${NOMBRE_PARQUE}</title>
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; background: #0d1b2a; color: #e0e0e0; padding: 40px; }
+    h1 { color: #4fc3f7; margin-bottom: 24px; }
+    table { border-collapse: collapse; width: 100%; max-width: 500px; }
+    th, td { padding: 10px 20px; border: 1px solid rgba(255,255,255,0.1); text-align: left; }
+    th { background: rgba(79,195,247,0.15); color: #4fc3f7; }
+    tr:hover { background: rgba(255,255,255,0.05); }
+    a { color: #4fc3f7; }
+  </style>
+</head>
+<body>
+  <h1>🌬️ Aerogeneradores</h1>
+  <table>
+    <tr><th>ID</th><th>Sector</th></tr>
+    <tr><td>AG-01</td><td>Norte</td></tr>
+    <tr><td>AG-02</td><td>Norte</td></tr>
+    <tr><td>AG-03</td><td>Norte</td></tr>
+    <tr><td>AG-04</td><td>Sur</td></tr>
+    <tr><td>AG-05</td><td>Sur</td></tr>
+    <tr><td>AG-06</td><td>Sur</td></tr>
+    <tr><td>AG-07</td><td>Este</td></tr>
+    <tr><td>AG-08</td><td>Este</td></tr>
+    <tr><td>AG-09</td><td>Este</td></tr>
+    <tr><td>AG-10</td><td>Oeste</td></tr>
+    <tr><td>AG-11</td><td>Oeste</td></tr>
+    <tr><td>AG-12</td><td>Oeste</td></tr>
+  </table>
+  <br><a href="/">← Volver al panel</a>
+</body>
+</html>`);
+  return;
+}
   // TAREA 5: Añade aquí la ruta /salud
 
   res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8' });
